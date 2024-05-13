@@ -19,7 +19,7 @@ const Header = () => {
             <label> bookai.travel</label>
           </Typography>
           <RadiusButton children="Sign-up">
-          </RadiusButton>
+          </RadiusButton> 
           <RadiusButton 
             color="inherit" children="Log-in">
           </RadiusButton>

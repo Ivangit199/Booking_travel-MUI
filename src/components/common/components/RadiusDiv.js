@@ -15,6 +15,7 @@ const useStyles = makeStyles({
     color: 'white',
     marginTop: 30
   },
+
 });
 
 const RadiusDiv = ({ children }) => {
