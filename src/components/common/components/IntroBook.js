@@ -6,7 +6,7 @@ const useStyles = makeStyles({
     introBook: {
         backgroundColor: 'rgb(2,148,233)',
         borderRadius: '50px',
-        width: '55vw',
+        width: '100%',
         padding: '30px',
         marginTop: '20px',
         marginLeft: 20,

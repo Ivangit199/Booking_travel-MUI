@@ -6,7 +6,10 @@ const useStyles = makeStyles({
         backgroundColor: 'rgb(2, 148, 233)',
         borderRadius: 20,
         width: '50%',
-        height: 'auto'
+        height: 'auto',
+        '@media (max-width: 768px)': {
+          display: 'none', // Hide the element on screens with a maximum width of 768px
+        },
     },
 });
 

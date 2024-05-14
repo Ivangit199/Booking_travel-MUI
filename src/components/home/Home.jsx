@@ -24,7 +24,7 @@ const Home = () => {
       <MainConrainer>
         <RadiusDiv>
           <div style={{color: 'white', width: '60vw'}}>
-            <label style={{marginTop: 100, fontSize: 70, fontWeight: 'bold'}}>
+            <label className='top-div'>
               Use Crypto to <br></br> Pay for Your <br></br> Dream Getaway
             </label>
             <label style={{fontSize: 30, display: 'block'}}>
@@ -56,7 +56,7 @@ const Home = () => {
             </div>
           </ImgDiv>
         </RadiusDiv>
-        <div className="div-inline" >
+        <div className="div-inline">
           <div className="radius-div">
             <div>
               <label style={{display: 'block'}}>Accepting Payments via Credit <br></br> Card, Debit Card, and <br></br> Cryptocurrency.</label>
@@ -74,19 +74,19 @@ const Home = () => {
           </div>
         </div>
         <div className='div-setting'>
-          <span style={{width: '25%', display: 'inline-flex'}}>
+          <span className='pay-span' >
             <img className='icon-setting' src="./img/24 7 Support.png"/>
             <p className='p-setting'>24/7 Customer Support</p>          
           </span>
-          <span style={{width: '25%', display: 'inline-flex'}}>
+          <span className='pay-span'>
             <img className='icon-setting' src="./img/Payment Options.png"/>
             <p className='p-setting'>100+ Payment Options</p>          
           </span>
-          <span style={{width: '25%', display: 'inline-flex'}}>
+          <span className='pay-span'>
             <img className='icon-setting' src="./img/Rewards.png"/>
             <p className='p-setting'>Rewards and Discounts</p>          
           </span>
-          <span style={{width: '25%', display: 'inline-flex'}}>
+          <span className='pay-span'>
             <img className='icon-setting' src="./img/Best Price.png"/>
             <p className='p-setting'>Best Price Guaranteed</p>          
           </span>
@@ -190,7 +190,7 @@ const Home = () => {
               </label>
             </div>
             <ImgDiv>
-            <img src="./img/assets/123.png" style={{ width: '100%', height: '100%', borderRadius: 20 }} alt=""/>
+              <img src="./img/assets/123.png" style={{ width: '100%', height: '100%', borderRadius: 20 }} alt=""/>
             </ImgDiv>
           </RadiusDiv>
       </div>

@@ -1,7 +1,9 @@
 
 .div-inline {
     display: inline-flex;
-    width: 100%;
+    @media (max-width: 768px) {
+        display: block;
+      };
 }
 
 .radius-div {
@@ -9,13 +11,27 @@
     padding: 30px;
     border-radius: 20px;
     width: 50%;
-    height: 450px;
     margin-left: 20px;
     margin-right: 20px;
     font-size: 30px;
     margin-top: 30px;
     color: white;
     display: block;
+    @media (max-width: 768px) {
+        width: 100%;
+      };
+}
+
+.top-div {
+    /* marginTop: 100, fontSize: 70, fontWeight: 'bold', '@media (max-width: 768px)': {
+        marginTop: '0px' */
+    margin-top: 100px;
+    font-size: 70px;
+    font-weight: bold;
+    @media (max-width: 768px) {
+        margin-top: 0px;
+        font-size: 60px;
+    }
 }
 
 .img-pay {
@@ -40,12 +56,11 @@
 
 .div-setting {
     background-image: url("./3.png");
-    width: 100%;
     margin-top: 20px;
     padding-left: 100px;
     padding-bottom: 50px;
     padding-right: 100px;
-    display: inline-flex;
+
 }
 
 .icon-setting {
@@ -77,6 +92,9 @@
     width: 100%;
     height: auto;
     margin-bottom: 10px;
+    @media (max-width: 768px) {
+        width: 100% !important;
+    }
 }
 
 .img-label {
@@ -138,12 +156,21 @@
     font-size: 24px;
     color: white;
     width: 100%;
+    @media (max-width: 768px) {
+        font-size: 20px;
+    }
+    @media (max-width: 630px) {
+        font-size: 14px;
+    }
 }
 
 .nav-pills {
     background-color: rgb(2, 148, 233);
     border-top-left-radius: 30px !important;
     border-top-right-radius: 30px !important;
+    @media (max-width: 768px) {
+        font-size: 20px;
+    }
 }
 
 .tab-pane {
@@ -196,7 +223,11 @@
 }
 
 .MuiSlider-root {
-    width: 32vw !important
+    width: 100% !important;
+    /* @media (max-width: 768px) {
+        width: 30vw ;
+      }; */
+
 }
 
 .MuiSlider-thumb {
@@ -205,15 +236,16 @@
 
 .min-label {
     color: black;
-    font-size: 24px;
     margin-right: 13vw;
+    @media (max-width: 768px) {
+        width: 30vw ;
+      };
 }
 
 .price-label {
     display: inline-flex;
-    width: 16vw;
+    width: '50%';
     border: 1px solid rgb(234, 234, 234);
-    font-size: 26px;
     margin-top: 10px;
     padding-left: 10px;
     height: 50px;
@@ -224,13 +256,16 @@
 
 .price-p {
     margin-left: 8vw;
-    font-size: 26px;
+    @media (max-width: 768px) {
+        margin-left: 24vw;
+      };
+
 }
 
 .final-label {
     color: black;
     background-color: white;
-    width: 380px;
+    width: 100%;
     border-radius: 40px;
     padding-top: 5px;
     padding-left: 20px;
@@ -241,11 +276,116 @@
 
 .final-btn {
     height: 65px;
-    margin-left: 60px;
+    margin-left: 40%;
     border-radius: 30px;
     width: 150px;
     color: white;
     background-color: rgb(2, 148, 233);
     border-style: none;
+
+    @media (max-width: 768px) {
+        margin-left: 60px;
+    }
+
+    @media (max-width: 600px) {
+        margin-left: 0px;
+    }
+}
+
+.pay-span {
+    display: inline-flex;
+    width: 25%;
+    @media (max-width: 768px) {
+        width: 50%;
+      };
+}
+
+.search-media {
+    @media (max-width: 768px) {
+        width: 40% !important;
+      };
+}
+
+.search-activity {
+    @media (max-width: 768px) {
+        width: 95% ;
+      };
+}
+
+.suggest-label {
+    margin-top: 30px;
+    font-size: 20;
+    @media (max-width: 768px) {
+        font-size: 16px;
+      };
+} 
+
+.rating-label {
+    @media (max-width: 768px) {
+        padding-left: 5px;
+        width: 6vw;
+        font-size: 16px;
+        padding-left: 5px !important;
+        padding-top: 10px;
+      };
+}
+
+.rating-media {
+    @media (max-width: 768px) {
+        font-size: 10px;
+      };
+}
+
+.booking-total-media {
+    display: inline-flex;
+    @media (max-width: 768px) {
+        display: block;
+    };
+}
+
+.rating-star {
+    
+    @media (max-width: 768px) {
+        
+    };
+}
+
+.rating-fit {
+    width: 85px;
+    padding-left: 25px;
+    @media (max-width: 768px) {
+        width: 100px;
+        padding-left: 30px;
+    }
+
+    @media (max-width: 650px) {
+        width: 60px;
+        padding-left: 20px;
+    }
+}
+
+.responsive-img {
+    width: 30%;
+    height: 300px;
+    @media (max-width: 650px) {
+        width: 100%;
+        padding-left: 20px;
+    }
+}
+
+.responsive-div {
+    display: inline-flex; 
+    margin-top: 20px;
+    @media (max-width: 768px) {
+       display: block;
+    }
+}
+
+.responsive-booking {
+    display: inline-flex; 
+    margin-top: 20px;
+    @media (max-width: 650px) {
+       display: block;
+    }
 }
 

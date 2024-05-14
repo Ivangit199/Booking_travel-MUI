@@ -10,6 +10,9 @@ const useStyles = makeStyles({
       fontSize: '20px !important',
       color: 'black !important',
       backgroundColor: 'white !important',
+      '@media (max-width: 768px)': {
+        borderRadius: 'none', // Hide the element on screens with a maximum width of 768px
+      },
     },
   });
 

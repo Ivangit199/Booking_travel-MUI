@@ -19,13 +19,24 @@ const useStyles = makeStyles({
         width: '40vw',
         padding: '50px',
         marginTop: '30px',
-        height: '1300px'
+        height: '1500px',
+        fontSize: '28px',
+        '@media (max-width: 768px)': {
+            width: '100%'
+          },
+        '@media (max-width: 550px)': {
+            height: '1800px'
+        },
+        '@media (max-width: 350px)': {
+            height: '1900px'
+        },
+       
     },
     priceLabel: {
         color: 'black',
-        fontSize: '24px',
         fontWeight: 'bold',
-        marginLeft: '20px'
+        marginLeft: '20px',
+        fontSize: '30px'
     }
 });
 
@@ -47,7 +58,7 @@ const BestGuarant = ({ children }) => {
             <div>
                 <label style={{fontSize: '20px', marginTop: '30px'}}>Price per night</label>
         </div>
-        <Box sx={{ width: 300 }}>
+        <Box sx={{ width: '300' }}>
             <Slider
                 getAriaLabel={() => 'Temperature range'}
                 value={value}
@@ -63,7 +74,7 @@ const BestGuarant = ({ children }) => {
             <label className='min-label'>MIN</label>
             <label className='min-label'>MAX</label>
         </div>
-        <div style={{display: 'inline-flex'}}> 
+        <div > 
             <Label className='price-label' style={{display: 'inline-flex'}}>
                 US$ <p className='price-p'>{value[0]}</p>
             </Label>
@@ -79,8 +90,8 @@ const BestGuarant = ({ children }) => {
         <div>
             <label className={classes.priceLabel} style={{marginTop: 25}}>Star Rating</label>
         </div>
-        <div style={{display: 'inline-flex'}}> 
-            <Label className='price-label' style={{display: 'inline-flex', height: 50, paddingLeft: 18, width: '6vw', marginRight: '10px'}}>
+        <div style={{display: 'inline-flex', margin: '20px'}}> 
+        <Label className='price-label rating-fit rating-fit'>
                 1 
                 <p>
                     <Rating
@@ -91,7 +102,7 @@ const BestGuarant = ({ children }) => {
                     />
                 </p>
             </Label>
-            <Label className='price-label' style={{display: 'inline-flex', height: 50, paddingLeft: 18, width: '6vw', marginRight: '10px'}}>
+            <Label className='price-label rating-fit rating-star'>
                 2 
                 <p>
                     <Rating
@@ -102,7 +113,7 @@ const BestGuarant = ({ children }) => {
                     />
                 </p>
             </Label>
-            <Label className='price-label' style={{display: 'inline-flex', height: 50, paddingLeft: 18, width: '6vw', marginRight: '10px'}}>
+            <Label className='price-label rating-fit'>
                 3 
                 <p>
                     <Rating
@@ -113,7 +124,7 @@ const BestGuarant = ({ children }) => {
                     />
                 </p>
             </Label>
-            <Label className='price-label' style={{display: 'inline-flex', height: 50, paddingLeft: 18, width: '6vw', marginRight: '10px'}}>
+            <Label className='price-label rating-fit'>
                 4 
                 <p>
                     <Rating
@@ -124,7 +135,7 @@ const BestGuarant = ({ children }) => {
                     />
                 </p>
             </Label>
-            <Label className='price-label' style={{display: 'inline-flex', height: 50, paddingLeft: 18, width: '6vw', marginRight: '10px'}}>
+            <Label className='price-label rating-fit'>
                 5 
                 <p>
                     <Rating

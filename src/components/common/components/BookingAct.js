@@ -6,6 +6,7 @@ import DailyBooking from './DailyBooking';
 import HoverButton from './HoverButton';
 import BestGuarant from './BestGuarant';
 import IntroBook from './IntroBook';
+import { Media } from 'reactstrap';
 
 const useStyles = makeStyles({
     bookingAct: {
@@ -15,7 +16,10 @@ const useStyles = makeStyles({
         height: '550px',
         borderRadius: 50,
         paddingTop: '50px',
-        paddingLeft: '150px'
+        paddingLeft: '150px',
+        '@media (max-width: 768px)': {
+            paddingLeft: '40px', // Hide the element on screens with a maximum width of 768px
+          },
     },
     labelTo: {
         marginTop: '50px',
@@ -49,19 +53,19 @@ const BookingAct = ({ children }) => {
             </div>
             <div>
                 <div>
-                    <input type='text' className='search-input' placeholder='Search for places, properties or activities'/>
+                    <input type='text' className='search-input search-activity' placeholder='Search for places, properties or activities'/>
                 </div>
                 <div>
                     <input type='text' className='search-input' style={{width: '15%'}} placeholder='from'/>
                     <input type='text' className='search-input'  style={{width: '15%'}} placeholder='from'/>
-                    <input type='text' className='search-input'  style={{width: '20%'}} placeholder='2 Adults 1 Child'/>
+                    <input type='text' className='search-input search-media'  style={{width: '20%',  }} placeholder='2 Adults 1 Child'/>
                 </div>
             </div>
             <div>
                 <button className='btn-blue'>Search</button>
             </div>
             <div>
-                <label style={{fontSize: 24, marginTop: 30}}>Suggestions: 
+                <label className='suggest-label' style={{fontSize: 24, marginTop: 30}}>Suggestions: 
                     <RadiusButton children="Dubai">
                     </RadiusButton>
                     <RadiusButton children="Sweden">
@@ -75,7 +79,7 @@ const BookingAct = ({ children }) => {
             </div>
         
         </div>
-        <div style={{display: 'inline-flex'}}>
+        <div className='booking-total-media'>
             <BestGuarant>
 
             </BestGuarant>

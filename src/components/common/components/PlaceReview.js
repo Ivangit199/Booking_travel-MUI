@@ -17,9 +17,9 @@ const PlaceReview = ({ children }) => {
 
 return (
     <div>
-        <div style={{display: 'inline-flex', marginTop: '20px'}}>
-            <img className='small-img' src="./img/assets/urn_aaid_sc_US_9cc34ef4-7397-4802-8181-853fa53f6e6f-_4_.png" style={{width: '40%', height: 300}}/>
-            <div style={{textAlign: 'left', marginLeft: 30, display: 'Block'}}>
+        <div className='responsive-div' >
+            <img className='small-img responsive-img' src="./img/assets/urn_aaid_sc_US_9cc34ef4-7397-4802-8181-853fa53f6e6f-_4_.png"/>
+            <div style={{textAlign: 'left', marginLeft: 20, display: 'Block', width: '75%'}}>
                 <label style={{color: 'white', display: 'inline-block', fontSize: '30px', marginTop: '10px'}}>Petronas Twin Towers</label>
                 <div>
                     <label style={{color: 'white', fontSize: '16px'}}>Jalan Cta - See marginTop<br></br>0.3km from kuala Lumpur</label>
@@ -60,7 +60,7 @@ return (
                     />
                 </div>
                 <div>
-                    <label className='final-label'>US$ 157.23<br></br><p style={{fontWeight: 'normal', fontSize: '16px', marginBottom: '5px', display: 'contents'}}>For 3 nights, 1 Room</p>
+                    <label className='final-label'>US$ 157.23<br></br><p style={{fontWeight: 'normal', fontSize: '14px', marginBottom: '5px', display: 'contents'}}>For 3 nights, 1 Room</p>
                     <button className='final-btn' >Book</button>
                     </label>
                 </div>
