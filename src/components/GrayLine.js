@@ -6,7 +6,7 @@ const useStyles = makeStyles({
         backgroundColor: 'rgb(234,234,234)',
         height: 2,
         width: '100%',
-        marginTop: 30
+        marginTop: 50
     },
 });
 

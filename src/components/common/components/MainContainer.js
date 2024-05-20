@@ -4,10 +4,9 @@ import { Container } from '@mui/material';
 
 const useStyles = makeStyles({
   mainContainer: {
-    backgroundColor: 'rgb(174,226,241)',
+    backgroundColor: 'black',
     padding: 10,
     width: '100vw',
-    marginTop: '80px'
   },
 });
 

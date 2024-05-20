@@ -182,7 +182,7 @@ const Home = () => {
         </div>
       </MainConrainer>
       
-      <div style={{backgroundColor: 'rgb(2, 148, 233)', width: '100vw'}}>
+      <div style={{backgroundColor: 'rgb(2, 148, 233)', width: '100%'}}>
         <RadiusDiv>
           <div style={{color: 'white', width: '100%', backgroundColor: 'rgb(2, 148, 233'}}>
               <label style={{marginTop: 250, fontSize: 70, fontWeight: 'bold'}}>

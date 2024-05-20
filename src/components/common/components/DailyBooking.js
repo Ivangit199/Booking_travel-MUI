@@ -2,6 +2,7 @@ import React from 'react'
 import { makeStyles } from '@mui/styles';
 import RadiusButton from '../RadiusButton';
 import { Button } from '@mui/material';
+import BookSymbol from '../../homenew/components/BookSymbol';
 
 const useStyles = makeStyles({
     dailyBooking: {
@@ -29,46 +30,45 @@ const DailyBooking = ({ children }) => {
 
 return (
     <div>
-        <div className={classes.dayLabel}>
-            <div class="accordion accordion-flush" id="accordionFlushExample">
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingOne">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne" style={{backgroundColor: ' rgb(2, 148, 233)', borderStyle: 'none', fontSize: '30', color: 'white', paddingLeft: '50vw', fontWeight: 'bold', fontSize: '30px', borderStyle: 'none'}}>
+    <div className={classes.dayLabel}>
+        <div className="accordion accordion-flush" id="accordionFlushExample">
+            <div className="accordion-item" style={{ borderRadius: 15, border: '1px solid white', backgroundColor: 'black', padding: 20 }}>
+                <h2 className="accordion-header" id="flush-headingOne" style={{ backgroundColor: 'black' }}>
+                    <button
+                        className="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseOne"
+                        aria-expanded="false"
+                        aria-controls="flush-collapseOne"
+                        style={{ backgroundColor: 'rgb(0, 0, 0)', fontSize: '30px', color: 'white', paddingLeft: '50vw', fontWeight: 'bold' }}
+                    >
                         {children}
-                         </button>
-                    </h2>
-                    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                        <div className='responsive-booking'>
-                            <img className='small-img' src="./img/assets/urn_aaid_sc_US_9cc34ef4-7397-4802-8181-853fa53f6e6f-_4_.png" style={{width: '30%'}}/>
-                            <div style={{textAlign: 'left', marginLeft: 30}}>
-                                <label style={{color: 'white', display: 'inline-block', fontSize: '30px', marginTop: '10px'}}>Petronas Twin Towers</label>
-                                <label style={{color: 'white', fontSize: '24px'}}>Visit the iconic Petronas Twin Towers, the world's tallest twin skyscrapers, and enjoy the panoramic view of the city from the skybridge and observation Deck.</label>
-                                <div>
-                                    <button className='book-btn'>Book Activities </button>
-                                    <button className='book-btn'>Research </button>
-                                    <button className='book-btn'>Videos </button>
-                                </div>
-                            </div>
+                        <span className="accordion-icon"></span>
+                    </button>
+                </h2>
+                <div id="flush-collapseOne" className="accordion-collapse collapse" aria-labelledby="flush-headingOne" style={{ backgroundColor: 'black', borderBottomLeftRadius: 15, borderBottomRightRadius: 15 }}>
+                    <div className="responsive-booking">
+                        <img className="small-img" src="./img/assets/urn_aaid_sc_US_9cc34ef4-7397-4802-8181-853fa53f6e6f-_4_.png" style={{ width: '20%' }} />
+                        <div className='responsive-booking-label' style={{ textAlign: 'left', marginLeft: 30, width: '60%', marginRight: '20%' }}>
+                            <label style={{ color: 'white', display: 'inline-block', fontSize: '30px', marginTop: '10px' }}>Petronas Twin Towers</label>
+                            <label style={{ color: 'white', fontSize: '24px' }}>Visit the iconic Petronas Twin Towers, the world's tallest twin skyscrapers, and enjoy the panoramic view of the city from the skybridge and observation Deck.</label>
                         </div>
-                        <div className='responsive-booking'>
-                            <img className='small-img' src="./img/assets/urn_aaid_sc_US_9cc34ef4-7397-4802-8181-853fa53f6e6f-_4_.png" style={{width: '30%'}}/>
-                            <div style={{textAlign: 'left', marginLeft: 30}}>
-                                <label style={{color: 'white', display: 'inline-block', fontSize: '30px', marginTop: '10px'}}>Petronas Twin Towers</label>
-                                <label style={{color: 'white', fontSize: '24px'}}>Visit the iconic Petronas Twin Towers, the world's tallest twin skyscrapers, and enjoy the panoramic view of the city from the skybridge and observation Deck.</label>
-                                <div>
-                                    <button className='book-btn'>Book Activities </button>
-                                    <button className='book-btn'>Research </button>
-                                    <button className='book-btn'>Videos </button>
-                                </div>
-                            </div>
+                        <BookSymbol />
+                    </div>
+                    <div className="responsive-booking">
+                        <img className="small-img" src="./img/assets/urn_aaid_sc_US_9cc34ef4-7397-4802-8181-853fa53f6e6f-_4_.png" style={{ width: '20%' }} />
+                        <div className='responsive-booking-label' style={{ textAlign: 'left', marginLeft: 30, width: '60%', marginRight: '20%' }}>
+                            <label style={{ color: 'white', display: 'inline-block', fontSize: '30px', marginTop: '10px' }}>Petronas Twin Towers</label>
+                            <label style={{ color: 'white', fontSize: '24px' }}>Visit the iconic Petronas Twin Towers, the world's tallest twin skyscrapers, and enjoy the panoramic view of the city from the skybridge and observation Deck.</label>
                         </div>
-                        
-                    </div>  
+                        <BookSymbol />
+                    </div>
                 </div>
-                
-            </div>                                  
-        </div>
+            </div>
+        </div>                                  
     </div>
+</div>
     
 )
 

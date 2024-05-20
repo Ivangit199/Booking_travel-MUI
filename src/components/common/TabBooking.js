@@ -31,8 +31,8 @@ const useStyles = makeStyles({
 const TabBooking = () => {
     const classes = useStyles();
     return (
-        <div style={{marginTop: '10px', backgroundColor: '174,226,241', padding:'20px'}}>
-            <ul class="nav nav-pills mb-3 row" id="pills-tab" role="tablist" style={{marginBottom: '0px !important', paddingLeft: 0, marginLeft: 0, height: '100px', width: '100%'}}>
+        <div style={{marginTop: '10px', padding:'20px'}}>
+            <ul class="nav nav-pills mb-3 row" id="pills-tab" role="tablist" style={{marginBottom: '0px !important', paddingLeft: 0, marginLeft: 0, width: '100%'}}>
                 <li class="nav-item col-6 p-0" role="presentation">
                     <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Create Itinerary</button>
                 </li>
@@ -46,7 +46,7 @@ const TabBooking = () => {
 
                     </Itinerary>
                     <div>
-                        <label className='intro-div' style={{fontSize: 60, paddingBottom: '0px'}}>Successfully Created Itinerary <br></br> for Kuala Lumpur, Malaysia - 7 days</label>
+                        <label className='intro-div' style={{fontSize: 60, paddingBottom: '0px', width: '100%', color: 'white'}}>Successfully Created Itinerary <br></br> for Kuala Lumpur, Malaysia - 7 days</label>
                         <div className='daily-intro'>
                             <DailyBooking children="DAY 01">               
                             </DailyBooking>

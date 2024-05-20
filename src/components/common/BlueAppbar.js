@@ -4,7 +4,7 @@ import { makeStyles } from '@mui/styles';
 
 const useStyles = makeStyles({
   blueAppbar: {
-    backgroundColor: 'rgb(174,226,241) !important',
+    backgroundColor: 'black',
     padding: 10,
     height: 100
   },

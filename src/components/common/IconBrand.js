@@ -3,9 +3,12 @@ import { makeStyles } from '@mui/styles';
 
 const useStyles = makeStyles({
     cryptoImg: {
-        width: '50px',
+        width: '45px',
         height: 'auto',
-        marginRight: '30px  '
+        marginRight: '10px',
+        '@media (max-width:  768px)' : {
+          display: 'none'
+      }
     },
 });
 
