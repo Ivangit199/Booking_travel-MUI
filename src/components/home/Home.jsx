@@ -12,6 +12,8 @@ import PayImg from '../common/components/PayImg'
 import CryptoImg from '../common/components/CryptoImg'
 import IntroImg from '../common/components/IntroImg'
 import CryptoList from '../common/components/CryptoList'
+import { useHistory } from 'react-router-dom';
+
 
 const handleClick = () => {
   console.log('Button clicked!');
@@ -19,6 +21,7 @@ const handleClick = () => {
 };
 
 const Home = () => {
+  const history = useHistory();
   return (
     <div>
       <MainConrainer>
@@ -79,7 +82,7 @@ const Home = () => {
             <p className='p-setting'>24/7 Customer Support</p>          
           </span>
           <span className='pay-span'>
-            <img className='icon-setting' src="./img/Payment Options.png"/>
+            <img className='icon-setting' src="./img/Payment Options.png" onClick={() => history.push('/payment')}/>
             <p className='p-setting'>100+ Payment Options</p>          
           </span>
           <span className='pay-span'>
@@ -195,6 +198,11 @@ const Home = () => {
           </RadiusDiv>
       </div>
       <CryptoList/>
+      <div class="container">
+  <h2>Modal Login Example</h2>
+  
+  <button type="button" class="btn btn-default btn-lg" id="myBtn">Login</button>
+</div>
     </div>
   )
 }

@@ -5,6 +5,7 @@ import { Block } from '@mui/icons-material';
 import { Rating } from '@mui/material';
 import StarIcon from '@mui/icons-material/Star';
 import RadiusButton from '../RadiusButton';
+import { useHistory } from 'react-router-dom';
 
 const useStyles = makeStyles({
     placeReview: {
@@ -14,6 +15,7 @@ const useStyles = makeStyles({
 
 const PlaceReview = ({ children }) => {
     const classes = useStyles();
+    const history = useHistory();
 
 return (
     <div>
@@ -61,7 +63,7 @@ return (
                 </div>
                 <div>
                     <label className='final-label'>US$ 157.23<br></br><p style={{fontWeight: 'normal', fontSize: '14px', marginBottom: '5px', display: 'contents'}}>For 3 nights, 1 Room</p>
-                    <button className='final-btn' >Book</button>
+                    <button className='final-btn' onClick={() => history.push('/intro')}>Book</button>
                     </label>
                 </div>
                 
