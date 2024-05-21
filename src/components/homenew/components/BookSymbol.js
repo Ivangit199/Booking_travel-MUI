@@ -1,5 +1,6 @@
 import React from 'react'
 import { makeStyles } from '@mui/styles';
+import { useHistory } from 'react-router-dom';
 
 const useStyles = makeStyles({
   bookSymbol: {
@@ -30,10 +31,10 @@ const useStyles = makeStyles({
 
 const BookSymbol = ({ children }) => {
   const classes = useStyles();
-
+  const history = useHistory();
   return (
     <div className={classes.bookSymbol}>
-     <label className={classes.tripBtn}>
+     <label className={classes.tripBtn} onClick={() => history.push('/booking')}>
         BOOK YOUR <br></br>TRIP NOW
         <img className={classes.tripImg} src="./img/header/airplane-round.png" alt=""/>
       </label>

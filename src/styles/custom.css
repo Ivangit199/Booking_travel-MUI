@@ -248,7 +248,7 @@
 
 .price-label {
     display: inline-flex;
-    width: '50%';
+    width: 49%;
     border: 1px solid rgb(234, 234, 234);
     margin-top: 10px;
     padding-left: 10px;
@@ -259,7 +259,7 @@
 }
 
 .price-p {
-    margin-left: 8vw;
+    margin-left: 70%;
     @media (max-width: 768px) {
         margin-left: 24vw;
       };
@@ -342,6 +342,7 @@
 
 .booking-total-media {
     display: inline-flex;
+    margin-bottom: 100px;
     @media (max-width: 768px) {
         display: block;
     };
@@ -355,7 +356,8 @@
 }
 
 .rating-fit {
-    width: 85px;
+    width: 27%;
+    justify-content: center;
     padding-left: 25px;
     @media (max-width: 768px) {
         width: 100px;
@@ -370,7 +372,6 @@
 
 .responsive-img {
     width: 30%;
-    height: 300px;
     @media (max-width: 768) {
         width: 100%;
         padding-left: 20px;
@@ -551,4 +552,13 @@ cursor: not-allowed;
 .book-label {
     font-size: 60px;
     font-weight: bold;
+}
+
+.book-tab-btn {
+    padding-top: 0px;
+    padding-bottom: 5px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 10px !important;
+
 }

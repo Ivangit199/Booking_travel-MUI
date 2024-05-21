@@ -60,9 +60,6 @@ const DestinationImg = ({ children }) => {
             <label className={classes.desLabel}> 7 DAY TRIP ADVETURE IN MALAYSIA</label>
             <img className={classes.heartIcon} src="./img/header/heart-cog.png" alt=""/>
         </div>
-        
-        
-       
     </div>
   )
 }

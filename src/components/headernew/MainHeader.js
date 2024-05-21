@@ -88,7 +88,6 @@ const MainHead = () => {
                     <img src="./img/header/setting-1.png" alt=""/>
                     </label>
                 </div>
-                
             </div>
             
         </>

@@ -8,9 +8,9 @@ const useStyles = makeStyles({
       marginLeft: '10px !important',
       fontSize: '20px !important',
       color: 'white',
-      backgroundColor: 'rgb(162,229,255) !important',
+      backgroundColor: 'rgb(0,113,255)',
       '&:hover': {
-        backgroundColor: 'rgb(2,148,233)', // Change color on hover
+        backgroundColor: 'rgb(0,113,255)', // Change color on hover
       },
     },
   });
@@ -19,7 +19,7 @@ const HoverButton = ({ children }) => {
     const classes = useStyles();
 
 return (
-    <Button variant="contained" className={classes.hoverButton} color="inherit">
+    <Button variant="contained" className={classes.hoverButton}>
         {children}
     </Button>
 )

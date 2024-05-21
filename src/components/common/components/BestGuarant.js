@@ -90,8 +90,8 @@ const BestGuarant = ({ children }) => {
         <div>
             <label className={classes.priceLabel} style={{marginTop: 25}}>Star Rating</label>
         </div>
-        <div style={{display: 'inline-flex', margin: '20px'}}> 
-        <Label className='price-label rating-fit rating-fit'>
+        <div style={{display: 'inline-flex', margin: '20px', width: '100%'}}> 
+        <Label className='price-label rating-fit'>
                 1 
                 <p>
                     <Rating

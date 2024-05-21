@@ -79,7 +79,7 @@ const useStyles = makeStyles({
         borderRadius: 60,
         paddingLeft: 15,
         paddingTop: 20,
-        fontSize: 30,
+        fontSize: 20,
         marginTop: 20,
         '@media (max-width: 768px)': {
           width: '90%',
@@ -89,7 +89,7 @@ const useStyles = makeStyles({
       tripImg: {
         width: 72,
         height: 72,
-        marginLeft: 40,
+        marginLeft: 70,
         cursor: 'pointer',
         '@media (max-width: 768px)': {
           marginLeft: 20
@@ -124,8 +124,8 @@ const Itinerary = ({ children }) => {
                 <img className={classes.tripImg} src="./img/header/airplane-round.png" alt=""/>
             </label>
         <div>
-            <label style={{fontSize: 24, marginTop: 30}}>SUGGESTIONS:DUBAI, MALAYSIA, SWEDEN, USA 
-            </label>
+        <label style={{fontSize: 24, marginTop: 30}}>SUGGESTIONS:DUBAI, MALAYSIA, SWEDEN, USA 
+        </label>
         </div>
     </div>
   )
