@@ -153,7 +153,6 @@ const BookingAct = ({ children }) => {
                 </div>
                 </div>
             </div>       
-        
         </div>
         <div className='booking-total-media'>
             <BestGuarant>

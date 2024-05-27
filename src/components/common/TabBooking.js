@@ -25,7 +25,7 @@ const useStyles = makeStyles({
         borderStyle: 'none',
         width: '100%',
         color: 'red',
-    }
+    },
 });
 
 const TabBooking = () => {

@@ -5,10 +5,7 @@ const useStyles = makeStyles({
     cryptoImg: {
         width: '45px',
         height: 'auto',
-        marginRight: '10px',
-        '@media (max-width:  768px)' : {
-          display: 'none'
-      }
+        marginRight: '10px  '
     },
 });
 

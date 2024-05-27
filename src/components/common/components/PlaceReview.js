@@ -92,7 +92,7 @@ return (
             <img className={classes.heartIcon} src="./img/header/heart-cog.png" alt=""/>
         </div>
             <div style={{textAlign: 'left', marginLeft: 20, display: 'Block', width: '75%'}}>
-                <label style={{color: 'white', display: 'inline-block', fontSize: '30px', marginTop: '10px'}}>Petronas Twin Towers</label>
+                <label style={{color: 'white', display: 'inline-block', fontSize: '30px', marginTop: '10px'}}><strong>Petronas Twin Towers</strong></label>
                 <div>
                     <label style={{color: 'white', fontSize: '16px'}}>Jalan Cta 4b - See map<br></br>0.3km from kuala Lumpur</label>
                 </div>
@@ -112,7 +112,7 @@ return (
                 </div>
                 
                 <div className={classes.bookBtn}>
-                    <label className={classes.tripBtn} onClick={() => history.push('/booking')}>
+                    <label className={classes.tripBtn} onClick={() => history.push('/intro')}>
                             Book
                             <img className={classes.tripImg} src="./img/header/airplane-round.png" alt=""/>
                     </label>
