@@ -1,7 +1,9 @@
 import React from 'react'
 import MainContainer from '../common/components/MainContainer'
-import IntroTop from './IntroTop'
-import IntroDestinate from './IntroDestinate'
+import IntroTop from './components/IntroTop'
+import IntroDestinate from './components/IntroDestinate'
+import IntroList from './components/IntroList'
+import IntroRoom from './components/IntroRoom'
 
 const Intro = () => {
     return(
@@ -9,7 +11,7 @@ const Intro = () => {
             <MainContainer>
                 <IntroTop/>
                 <IntroDestinate/>
-               
+                <IntroRoom/>
             </MainContainer>
         </div>
     )

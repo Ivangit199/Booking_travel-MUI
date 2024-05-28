@@ -1,5 +1,5 @@
 import React, {useState} from "react"
-
+import { useHistory } from 'react-router-dom';
 import { makeStyles } from '@mui/styles';
 import IconBrand from '../../components/common/IconBrand';
 import { Media } from "reactstrap";
@@ -52,11 +52,14 @@ const MainHead = () => {
     const [seenSignin, setSigninSeen] = useState(false)
     const [seenLogin, setLoginSeen] = useState(false)
     const classes = useStyles();
+    const history = useHistory();
+
+    
   
       function SignupPop () {
         setSigninSeen(!seenSignin);
       };
-  
+      
       function LoginPop () {
         setLoginSeen(!seenLogin);
     };
@@ -82,10 +85,10 @@ const MainHead = () => {
                 </div>
                 <div className={classes.settingLab} style={{textAlign: 'right'}}>
                     <label className={classes.headRadiusLab} onClick={SignupPop}>SIGN-UP</label>
-                    {seenSignin ? <SignUpButton toggle={SignupPop} /> : null}
+                    {seenSignin ? <SignUpButton  toggle={SignupPop} /> : null}
                     <label className={classes.headRadiusLab} onClick={LoginPop}>LOG-IN</label>
-                    <label className={classes.headRadiusLab}>
-                    <img src="./img/header/setting-1.png" alt=""/>
+                    <label className={classes.headRadiusLab} onClick={() => history.push('/profile')}>
+                        <img src="./img/header/setting-1.png" alt=""/>
                     </label>
                 </div>
             </div>

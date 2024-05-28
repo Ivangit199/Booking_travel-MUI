@@ -14,13 +14,15 @@ import Slider from '@mui/material/Slider';
 
 const useStyles = makeStyles({
     cryptoImg: {
-        backgroundColor: 'white',
+        backgroundColor: 'black',
+        color: 'white',
         borderRadius: '50px',
         width: '40vw',
         padding: '50px',
         marginTop: '30px',
         height: '1500px',
         fontSize: '28px',
+        border: '1px solid',
         '@media (max-width: 768px)': {
             width: '100%'
           },
@@ -33,7 +35,7 @@ const useStyles = makeStyles({
        
     },
     priceLabel: {
-        color: 'black',
+        color: 'white',
         fontWeight: 'bold',
         marginLeft: '20px',
         fontSize: '30px'
@@ -52,12 +54,12 @@ const BestGuarant = ({ children }) => {
 
   return (
     <div className={classes.cryptoImg}>
-        <div>
-            <label className={classes.priceLabel}>BEST PRICE GUARANTEED</label>
+        <div style={{textAlign: 'center'}}>
+            <label className={classes.priceLabel}>Price Range</label>
         </div>
-            <div>
-                <label style={{fontSize: '20px', marginTop: '30px'}}>Price per night</label>
-        </div>
+            {/* <div>
+                <label style={{fontSize: '20px', marginTop: '30px'}}>Price Range</label>
+        </div> */}
         <Box sx={{ width: '300' }}>
             <Slider
                 getAriaLabel={() => 'Temperature range'}
@@ -76,15 +78,16 @@ const BestGuarant = ({ children }) => {
         </div>
         <div > 
             <Label className='price-label' style={{display: 'inline-flex'}}>
-                US$ <p className='price-p'>{value[0]}</p>
+                <span style={{width: '50%'}}>US$</span><span style={{width: '50%', textAlign: 'right'}}>{value[0]}</span>
             </Label>
             <Label className='price-label' style={{display: 'inline-flex'}}>
-                US$ <p className='price-p'>{value[1]}</p>
+            <span style={{width: '50%'}}>US$</span><span style={{width: '50%', textAlign: 'right'}}>{value[1]}</span>
             </Label>
         </div>
         <PriceList children="Breakfast Included"/>
         <PriceList children="Free Cancelation Included"/>
-        <PriceRating children="Free Cancelation Included"/>
+        {/* <PriceRating children="Free Cancelation Included"/> */}
+        <PriceList children="Star Rating 4 and above    "/>
         <PriceList children="Guest rating: Excellent/Exceptional"/>
         <PriceList children="Member Price"/>
         <div>
@@ -156,10 +159,15 @@ const BestGuarant = ({ children }) => {
         <GuestReview children="Very Good"/>
         <GuestReview children="Good"/>
         <GrayLine/>
-        <div>
+        <div style={{width: '100%', textAlign: 'center'}}>
             <label className={classes.priceLabel} style={{marginTop: 25}}>Payment type</label>
         </div>
-        <PriceList children="Free Cancellation"/>
+        <div class="form-check" style={{marginTop: 20, marginLeft: 20}}>
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1"/>
+            <label class="form-check-label" for="defaultCheck1" style={{marginLeft: 15}}>
+                Free Cancelation
+            </label> 
+        </div>  
     </div>
     
   )

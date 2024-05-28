@@ -1,0 +1,35 @@
+.nav-link {
+    background-color: rgb(112, 112, 112) !important;
+    border-top-left-radius: 15px !important;
+    border-top-right-radius: 15px !important;
+    font-size: 24px;
+    color: black;
+    width: 100%;
+    margin-right: 20px;
+
+    @media (max-width: 768px) {
+        font-size: 20px;
+    };
+    @media (max-width: 630px) {
+        font-size: 14px;
+    }
+}
+
+.nav-pills {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border: 1px solid white;
+    @media (max-width: 768px) {
+        font-size: 20px;
+    }
+}
+
+.active {
+    background-color: white !important;
+    color: black !important;
+}
+
+.nav-item {
+    display: inline-flex;
+    width: 20%;
+}

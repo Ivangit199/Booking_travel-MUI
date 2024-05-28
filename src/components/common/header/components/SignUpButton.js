@@ -25,6 +25,11 @@ const useStyles = makeStyles({
     fontSize: '30px',
     paddingLeft: '15px',
     borderColor: 'rgb(131, 13, 131)'
+  },
+  tripImg: {
+    position: 'absolute',
+    width: 50,
+    height: 'auto'
   }
 });
 
@@ -48,25 +53,27 @@ const SignUpButton = ({ toggle }) => {
     <div className="popup">
       <div className="popup-inner input-modal">
         <div>
-          <h2 style={{marginBottom: '30px'}}>Login | Rester</h2>
+          <h2 style={{marginBottom: '30px', textAlign: 'left'}}>Login | Rester</h2>
           <div className={classes.mainDiv}>
             <form onSubmit={handleSignin} style={{width: '45%'}}>
             <label>
-                <input style={{borderRadius: '15px', fontSize: '30px', paddingLeft: '15px', borderColor: 'rgb(131,131,131'}} type="text" value={firstname} onChange={(e) => setFirstname(e.target.value)} placeholder='First Name'/>
+                <input style={{borderRadius: '15px', fontSize: '30px', paddingLeft: '15px', borderColor: 'white', backgroundColor: 'black'}} type="text" value={firstname} onChange={(e) => setFirstname(e.target.value)} placeholder='First Name'/>
             </label>
             <label>
-                <input style={{borderRadius: '15px', fontSize: '30px', paddingLeft: '15px', borderColor: 'rgb(131,131,131'}} type="text" value={lastname} onChange={(e) => setLastname(e.target.value)} placeholder='Last Name'/>
+                <input style={{borderRadius: '15px', fontSize: '30px', paddingLeft: '15px', borderColor: 'white', backgroundColor: 'black'}} type="text" value={lastname} onChange={(e) => setLastname(e.target.value)} placeholder='Last Name'/>
             </label>
             <label>
-                <input style={{borderRadius: '15px', fontSize: '30px', paddingLeft: '15px', borderColor: 'rgb(131,131,131'}} type="text" value={email} onChange={(e) => setEmail(e.target.value)} placeholder='E-Mail'/>
+                <input style={{borderRadius: '15px', fontSize: '30px', paddingLeft: '15px', borderColor: 'white', backgroundColor: 'black'}} type="text" value={email} onChange={(e) => setEmail(e.target.value)} placeholder='E-Mail'/>
             </label>
             <label>
-                <input style={{borderRadius: '15px', fontSize: '30px', paddingLeft: '15px', borderColor: 'rgb(131,131,131'}} type="text" value={password} onChange={(e) => setPassword(e.target.value)} placeholder='Password'/>
+                <input style={{borderRadius: '15px', fontSize: '30px', paddingLeft: '15px', borderColor: 'white', backgroundColor: 'black'}} type="text" value={password} onChange={(e) => setPassword(e.target.value)} placeholder='Password'/>
             </label>
             <label>
-                <input style={{borderRadius: '15px', fontSize: '30px', paddingLeft: '15px', borderColor: 'rgb(131,131,131'}} type="text" value={confirm} onChange={(e) => setConfirm(e.target.value)} placeholder='Re-Enter Password'/>
+                <input style={{borderRadius: '15px', fontSize: '30px', paddingLeft: '15px', borderColor: 'white', backgroundColor: 'black'}} type="text" value={confirm} onChange={(e) => setConfirm(e.target.value)} placeholder='Re-Enter Password'/>
             </label>
-            <button type='submit' className='btn-blue' style={{backgroundColor: 'rgb(162,229, 255)', fontSize: 24, color: 'black', marginTop: 0, borderRadius: 10, height: '60px'}}>Register</button>
+            <button type='submit' className='btn-blue' >Register
+              <img className={classes.tripImg} src="./img/header/airplane-round.png" alt=""/>
+            </button>
             </form>
           </div>
         {/* <button onClick={toggle}>Close</button> */}

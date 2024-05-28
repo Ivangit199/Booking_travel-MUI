@@ -9,7 +9,6 @@ const useStyles = makeStyles({
        marginLeft: 20,
        fontSize: '30px',
         fontWeight: 'normal'
-,      
     },
 
     priceLine: {

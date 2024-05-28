@@ -5,8 +5,9 @@ import { Container } from '@mui/material';
 const useStyles = makeStyles({
   mainContainer: {
     backgroundColor: 'black',
-    padding: 10,
-    width: '100vw',
+    padding: 50,
+    width: '100%',
+    minHeight: '100vh'
   },
 });
 
