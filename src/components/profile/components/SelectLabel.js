@@ -19,7 +19,6 @@ const useStyles = makeStyles({
         border: '1px solid rgb(218,218,218)',
         height: 50
     },
-    
 });
 
 const SelectLabel = ({ children, content }) => {
