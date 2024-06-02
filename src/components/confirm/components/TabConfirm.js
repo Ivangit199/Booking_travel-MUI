@@ -35,7 +35,7 @@ const useStyles = makeStyles(() => ({
 }));
 
 function CustomTabPanel(props) {
-  const {children, value, index, ...other } = props;
+  const { children, value, index , ...other} = props;
 
   return (
     <div
@@ -67,7 +67,7 @@ function a11yProps(index) {
   };
 }
 
-export default function BasicTabs() {
+export default function BasicTabs({ hotelInfo, from, to, together}) {
   const [value, setValue] = React.useState(0);
   const classes = useStyles();
 
@@ -97,17 +97,17 @@ export default function BasicTabs() {
         </Tabs>
       </Box>
       <CustomTabPanel value={value} index={0}>
-          <BookRegister goToPayment={goToPayment}/>
+          <BookRegister goToPayment={goToPayment} hotelInfo={hotelInfo} from={from} to={to} together={together}/>
       </CustomTabPanel>
       <CustomTabPanel value={value} >
       </CustomTabPanel>
       <CustomTabPanel value={value} index={2}>
-        <BookingPayment goToConfirmed={goToConfirmed} goToInfo={goToInfo}/>
+        <BookingPayment goToConfirmed={goToConfirmed} goToInfo={goToInfo} hotelInfo={hotelInfo} from={from} to={to} together={together}/>
       </CustomTabPanel>
       <CustomTabPanel value={value} >
       </CustomTabPanel>
       <CustomTabPanel value={value} index={4}>
-        <BookingDetail/>
+        <BookingDetail hotelInfo={hotelInfo} from={from} to={to} together={together}/>
       </CustomTabPanel>
     </Box>
   );

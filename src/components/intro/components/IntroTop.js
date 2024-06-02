@@ -21,22 +21,22 @@ const useStyles = makeStyles({
 
 });
 
-const IntroTop = ({ children }) => {
+const IntroTop = ({ hotelInfo, from, to, together}) => {
   const classes = useStyles();
 
   return (
     <div className={classes.introTop}>
         <label className={classes.introInput} style={{width: '50%'}}>
-            Stay: Sama-Sama Hotel, KL Inetrnational Airport
+            Stay: {hotelInfo[0]}, {hotelInfo[1]}
         </label>
         <label className={classes.introInput} style={{width: '15%'}}>
-            From
+            {from}
         </label>
         <label className={classes.introInput} style={{width: '15%'}}>
-            To
+            {to}
         </label>
         <label className={classes.introInput} style={{width: '16%', marginRight: 0}}>
-            2 Adults 1 Child
+            {together}
         </label>
     </div>
   )

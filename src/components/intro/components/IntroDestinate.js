@@ -100,17 +100,17 @@ const useStyles = makeStyles({
 
 });
 
-const IntroDestinate = ({ content }) => {
+const IntroDestinate = ({ hotelInfo, form, to }) => {
   const classes = useStyles();
   return (
       <div>
         <div className={classes.introMainDiv}>
             <div className={classes.destInfo}>
                 <label className={classes.bigLabel}>
-                    Sama-Sama Hotel, KL Inetrnational Airport
+                    {hotelInfo[0]}, {hotelInfo[1]}
                 </label>
                 <label className={classes.mediumLabel}>
-                    Jalan Cta, 4b, Sepang, Malasya
+                    {hotelInfo[2]}, {to}
                     <button className={classes.mapBtn}>
                         Map
                         <ArrowOutwardIcon  style={{marginLeft: 10}}/>

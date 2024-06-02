@@ -42,14 +42,41 @@ const useStyles = makeStyles({
     }
 });
 
-const BestGuarant = ({ children }) => {
+const BestGuarant = ({ getPrice, getBreakfast, getCancellation, getStarRating, getGuestRating, getMemberPrice }) => {
   const classes = useStyles();
 
-  const [value, setValue] = useState([11, 381]);
+  const [value, setValue] = useState([11, 356]);
 
   const handleChange = (event, newValue) => {
+    getPrice(newValue)
     setValue(newValue);
   };
+  const breakfast = (value) => {
+    if (value = "true") {
+        getBreakfast("Breakfast Included");
+    }
+  }
+  const cancellation = (value) => {
+    if (value = "true") {
+        getCancellation("Free Cancellation");
+    }
+  }
+  const starRating = (value) => {
+    if (value = "true") {
+        getStarRating("Star Rating 4 and above");
+    }
+  }
+  const guestRating = (value) => {
+    if (value = "true") {
+        getGuestRating("Excellent");
+    }
+  }
+  const memberPrice = (value) => {
+    if (value = "true") {
+        getMemberPrice("Member Price");
+    }
+  }
+  
   
 
   return (
@@ -67,10 +94,9 @@ const BestGuarant = ({ children }) => {
                 onChange={handleChange}
                 valueLabelDisplay="auto"
                 min={11}  // Minimum value
-                max={381} // Maximum value
+                max={356} // Maximum value
                 width={'100%'}
-
-            />
+             />
         </Box>
         <div style={{display: 'inline-flex'}}>
             <label className='min-label'>MIN</label>
@@ -84,12 +110,12 @@ const BestGuarant = ({ children }) => {
             <span style={{width: '50%'}}>US$</span><span style={{width: '50%', textAlign: 'right'}}>{value[1]}</span>
             </Label>
         </div>
-        <PriceList children="Breakfast Included"/>
-        <PriceList children="Free Cancelation Included"/>
+        <PriceList children="Breakfast Included" getToggle={breakfast}/>
+        <PriceList children="Free Cancelation Included" getToggle={cancellation}/>
         {/* <PriceRating children="Free Cancelation Included"/> */}
-        <PriceList children="Star Rating 4 and above    "/>
-        <PriceList children="Guest rating: Excellent/Exceptional"/>
-        <PriceList children="Member Price"/>
+        <PriceList children="Star Rating 4 and above" getToggle={starRating}/>
+        <PriceList children="Guest rating: Excellent/Exceptional" getToggle={guestRating}/>
+        <PriceList children="Member Price" getToggle={memberPrice}/>
         <div>
             <label className={classes.priceLabel} style={{marginTop: 25}}>Star Rating</label>
         </div>

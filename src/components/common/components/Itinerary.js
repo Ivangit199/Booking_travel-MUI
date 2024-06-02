@@ -1,8 +1,11 @@
 import React from 'react'
 import { makeStyles } from '@mui/styles';
 import ListNum from './ListNum';
-import RadiusButton from '../RadiusButton';
-import DailyBooking from './DailyBooking';
+import { useEffect, useRef, useState } from "react";
+import { chatCompletion } from './../../common/api/chat.api'
+import { toast } from "react-toastify";
+
+
 
 const useStyles = makeStyles({
     itinerary: {
@@ -30,7 +33,8 @@ const useStyles = makeStyles({
         borderStyle: 'none',
         height: '50px',
         borderRadius: '10px',
-        width: '350px'
+        width: '350px',
+        paddingLeft: 20
     },
     experienceBrand: {
         width: '100%'
@@ -55,8 +59,6 @@ const useStyles = makeStyles({
         '@media (max-width: 768px)': {
           width: '90%'
         },
-  
-
     },
     heartIcon: {
         width: '44px',
@@ -64,7 +66,6 @@ const useStyles = makeStyles({
         position: 'absolute',
         top: 40,
         right: 30,
-        
     },
     bookSymbol: {
         display: 'inline-flex',
@@ -81,6 +82,7 @@ const useStyles = makeStyles({
         paddingTop: 20,
         fontSize: 20,
         marginTop: 20,
+        cursor: 'pointer',
         '@media (max-width: 768px)': {
           width: '90%',
           fontSize: 20
@@ -104,22 +106,75 @@ const useStyles = makeStyles({
       }
 });
 
-const Itinerary = ({ children }) => {
+const Itinerary = ({ getTravelPeriod, getPlan, getDestination }) => {
   const classes = useStyles();
+  const [destination, setDestination] = useState("") 
+  const [period, setPeriod] = useState("0")
+  const [messages, setMessages] = useState([]);
+  const [question, setQuestion] = useState("");
+  const [onRequest, setOnRequest] = useState(false);
+  
+
+  const messageType = {
+    answer: "answer",
+    question: "question"
+  };
+  const onEnterPress = (e) => {
+    if (e.keyCode === 13) getAnswer();
+  };
+
+  const getAnswer = async () => {
+  // if (onRequest) return;
+  if (period == "0") {
+    alert("Please Select Period")
+  }
+  const query = "I want to travel to " + destination + " for " + period +  "days. what should i do every day. I wnat to get description about place and activity. place should be a famous place of " + destination + " and writed in 1 line and activity should be writed in 3 lines. place and activity are seperated by %,acticity must be one paragraph";
+  
+  const newMessages = [...messages, {
+    type: messageType.question,
+    content: query
+  }];
+  setMessages(newMessages);
+  // setQuestion("");
+  setOnRequest(true); 
+  const { response, err } = await chatCompletion({ prompt: query });
+
+  if (response) {
+    setMessages([...newMessages, {
+      type: messageType.answer,
+      content: response.text
+    }]);
+    getPlan(response.text)
+  }
+  if (err) {
+    toast.error(err.message);
+    setOnRequest(false);
+  }
+};
+const getPeriod = (result) => {
+  setPeriod(result);
+  
+  getTravelPeriod(result);
+  
+}
+const putDestination = (result) => {
+  setDestination(result);
+  getDestination(result);
+}
 
   return (
     <div className={classes.itinerary}>
-      {children}
+    
       <div>
             <label className={classes.labelTo}>I AM TRAVLLING TO</label>
         </div>
         <div>
-            <input className={classes.InputTo} type='text' />
+            <input className={classes.InputTo} type='text' value={destination} onChange={(e) => putDestination(e.target.value)}/>
         </div>
         <div>
-            <label className={classes.labelTo} style={{marginTop: '20px'}}>FOR <ListNum/> DAYS</label>
+            <label className={classes.labelTo} style={{marginTop: '20px'}} onKeyUp={onEnterPress} >FOR <ListNum getPeriod={getPeriod}/> DAYS</label>
         </div>
-        <label className={classes.tripBtn}>
+        <label className={classes.tripBtn} onClick={getAnswer}>
                 CREATE
                 <img className={classes.tripImg} src="./img/header/airplane-round.png" alt=""/>
             </label>

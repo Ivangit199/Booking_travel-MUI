@@ -60,7 +60,8 @@ const useStyles = makeStyles({
         marginRight: 10,
         borderRadius: 5,
         border: '1px solid white',
-        display: 'inline-flex'
+        display: 'inline-flex',
+        height: 40
     },
     introSpan: {
         width: '50%'
@@ -89,17 +90,17 @@ const useStyles = makeStyles({
     }
 });
 
-const DestInfo = ({ children }) => {
+const DestInfo = ({ hotelInfo, from, to, together}) => {
   const classes = useStyles();
 
   return (
         <div className={classes.introMainDiv}>
             <div className={classes.destInfo}>
                 <label className={classes.bigLabel}>
-                    Sama-Sama Hotel, KL Inetrnational Airport
+                    {hotelInfo[0]}, {hotelInfo[1]}
                 </label>
                 <label className={classes.mediumLabel}>
-                    Jalan Cta, 4b, Sepang, Malasya
+                    
                     <button className={classes.mapBtn}>
                         Map
                         <ArrowOutwardIcon  style={{marginLeft: 10}}/>
@@ -117,9 +118,9 @@ const DestInfo = ({ children }) => {
                 </label>
             </div>
             <div style={{width: '100%'}}>
-                <label className={classes.disabledInput}> From </label>
-                <label className={classes.disabledInput}> To </label>
-                <label className={classes.disabledInput}> <span className={classes.introSpan}>2 Adults</span> <span className={classes.introSpan}>1 Adults</span></label>
+                <label className={classes.disabledInput}> {from} </label>
+                <label className={classes.disabledInput}> {to} </label>
+                <label className={classes.disabledInput}> <span className={classes.introSpan}>{together}</span></label>
                 <label className={classes.disabledInput} style={{textAlign: 'center'}}> <span style={{width: '100%'}}> 3 nights </span></label>
             </div>
             <label><strong>Non-Refundable</strong></label>

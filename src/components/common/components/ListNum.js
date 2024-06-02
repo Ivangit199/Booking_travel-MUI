@@ -1,6 +1,7 @@
 import React from 'react'
 import Button from '@mui/material/Button';
 import { makeStyles } from '@mui/styles';
+import { useEffect, useRef, useState } from "react";
 
 const useStyles = makeStyles({
     listNum: {
@@ -14,18 +15,21 @@ const useStyles = makeStyles({
     },
   });
 
-const ListNum = ({ children }) => {
+const ListNum = ({ getPeriod }) => {
     const classes = useStyles();
+    const [period, setPeriod] = useState("");
+
 
 return (
-    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" className={classes.listNum}>
+    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" className={classes.listNum} onChange={(e) => getPeriod(e.target.value)}>
+        <option value="0">00</option>
         <option value="1">01</option>
         <option value="2">02</option>
         <option value="3">03</option>
-        <option value="1">04</option>
-        <option value="2">05</option>
-        <option value="3">06</option>
-        <option value="3">07</option>
+        <option value="4">04</option>
+        <option value="5">05</option>
+        <option value="6">06</option>
+        <option value="7">07</option>
     </select>
 )
 

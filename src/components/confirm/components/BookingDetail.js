@@ -61,17 +61,17 @@ const useStyles = makeStyles({
     
 });
 
-const BookingDetail = ({ children }) => {
+const BookingDetail = ({ hotelInfo, from, to }) => {
   const classes = useStyles();
   return (
     <div style={{display: 'inline-flex', width: '100%', padding: 20, paddingTop: 50, color: 'white'}}>
         <div className={classes.bookingDetail}>
             <div className={classes.destInfo} style={{width: '80%'}}>
                 <label className={classes.bigLabel}><strong>
-                    Sama-Sama Hotel, KL<br></br>Inetrnational Airport</strong>
+                    {hotelInfo[0]} <br></br>{hotelInfo[1]}</strong>
                 </label>
                 <label className={classes.mediumLabel}>
-                    Jalan Cta, 4b, Sepang, Malasya
+                    {hotelInfo[2]}, {to}
                     <button className={classes.mapBtn}>
                         Map
                         <ArrowOutwardIcon  style={{marginLeft: 10}}/>

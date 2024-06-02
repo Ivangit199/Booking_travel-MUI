@@ -44,7 +44,7 @@ const useStyles = makeStyles({
       },
 });
 
-const IntroTable = ({ content }) => {
+const IntroTable = ({ hotelInfo, from, to, together}) => {
   const classes = useStyles();
   const history = useHistory();
 
@@ -120,7 +120,7 @@ const IntroTable = ({ content }) => {
                         <label style={{color: 'rgb(2, 148, 233)'}}>
                             US$215.58 for 3 nights, 1 room
                         </label>
-                        <label className={classes.tripBtn}  onClick={() => history.push('/confirm')}>
+                        <label className={classes.tripBtn} onClick={() => history.push('/confirm', {hotelInfo: hotelInfo, from, to, together})}>
                             <span >BOOK NOW</span>
                             <img className={classes.tripImg} src="./img/header/airplane-round.png" alt=""/>
                         </label>

@@ -14,16 +14,16 @@ const useStyles = makeStyles({
   }
 });
 
-const IntroRoom = ({ content }) => {
+const IntroRoom = ({ hotelInfo, from, to, together}) => {
   const classes = useStyles();
 
   return (
     
       <div className={classes.introRoom}>
         <label className={classes.roomLabel}>
-            <span >7 room types | room deals available</span>
+            <span >7 room types | 11 room deals available</span>
         </label>
-        <RoomDetail/>
+        <RoomDetail hotelInfo={hotelInfo} from={from} to={to} together={together}/>
     </div>
   )
 }

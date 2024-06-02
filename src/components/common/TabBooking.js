@@ -6,8 +6,7 @@ import RadiusButton from './RadiusButton';
 import DailyBooking from './components/DailyBooking';
 import HoverButton from './components/HoverButton';
 import BookingAct from './components/BookingAct';
-
-
+import { useEffect, useRef, useState } from "react";
 
 const useStyles = makeStyles({
     boderTab: {
@@ -30,6 +29,18 @@ const useStyles = makeStyles({
 
 const TabBooking = () => {
     const classes = useStyles();
+    const [period, setPeriod] = useState("1") 
+    const [dailyPlan, setDailyPlan] = useState([]);
+    const [destination, setDestination] = useState("") 
+    const getTravelPeriod = (result) => {
+        setPeriod(result);
+    }
+    const getDestination = (result) => {
+        setDestination(result);
+    }
+    const getPlan = (plan) => {
+        setDailyPlan(plan.split('\n\n'))
+    }
     return (
         <div style={{marginTop: '10px', padding:'20px'}}>
             <ul class="nav nav-pills mb-3 row" id="pills-tab" role="tablist" style={{marginBottom: '0px !important', paddingLeft: 0, marginLeft: 0, width: '100%'}}>
@@ -42,35 +53,18 @@ const TabBooking = () => {
             </ul>
             <div class="tab-content" id="pills-tabContent" style={{marginTop: '-65px'}}>
                 <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" style={{borderRadius: '50px'}}>
-                    <Itinerary>
+                    <Itinerary getTravelPeriod={getTravelPeriod} getPlan={getPlan} getDestination={getDestination}>
 
                     </Itinerary>
                     <div>
-                        <label className='intro-div' style={{fontSize: 60, paddingBottom: '0px', width: '100%', color: 'white'}}>Successfully Created Itinerary <br></br> for Kuala Lumpur, Malaysia - 7 days</label>
+                        <label className='intro-div' style={{fontSize: 60, paddingBottom: '0px', width: '100%', color: 'white'}}>Successfully Created Itinerary <br></br> for {destination} - {period} days</label>
                         <div className='daily-intro'>
-                            <DailyBooking children="DAY 01">               
-                            </DailyBooking>
+                            {dailyPlan.map((plan, index) => (  
+                                <DailyBooking children={plan}>               
+                                </DailyBooking>
+                            ))}
                         </div>
-                        <div className='daily-intro'>
-                            <DailyBooking children="DAY 02">               
-                            </DailyBooking>
-                        </div>
-                        <div className='daily-intro'>
-                            <DailyBooking children="DAY 03">               
-                            </DailyBooking>
-                        </div>
-                        <div className='daily-intro'>
-                            <DailyBooking children="DAY 04">               
-                            </DailyBooking>
-                        </div>
-                        <div className='daily-intro'>
-                            <DailyBooking children="DAY 05">               
-                            </DailyBooking>
-                        </div>
-                        <div className='daily-intro'>
-                            <DailyBooking children="DAY 06">               
-                            </DailyBooking>
-                        </div>
+                        
                     </div>
                 </div>
                 <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab"  style={{borderRadius: '50px'}}>

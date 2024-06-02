@@ -9,17 +9,17 @@ const useStyles = makeStyles({
      width: '100%',
      display: 'inline-flex'
     },
-});
+}); 
 
 
 
-const BookRegister = ({ goToPayment}) => {
+const BookRegister = ({ goToPayment, hotelInfo, from, to, together}) => {
   const classes = useStyles();
 
   return (
     <div className={classes.bookRegister}>
       <MainRegister goToPayment={goToPayment}/>
-      <DestInfo/>
+      <DestInfo hotelInfo={hotelInfo} from={from} to={to} together={together}/>
     </div>
   )
 }

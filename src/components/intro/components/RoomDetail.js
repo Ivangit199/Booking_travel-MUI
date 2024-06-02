@@ -29,7 +29,7 @@ const useStyles = makeStyles({
 
 });
 
-const RoomDetail = ({ content }) => {
+const RoomDetail = ({ hotelInfo, from, to, together}) => {
   const classes = useStyles();
 
   return (
@@ -40,7 +40,7 @@ const RoomDetail = ({ content }) => {
         <div className={classes.roomContent}>
             <RoomImg/>
             <div className={classes.introGrid}>
-                <IntroTable/>
+                <IntroTable hotelInfo={hotelInfo} from={from} to={to} together={together}/>
                 <IntroTable/>
             </div>
             

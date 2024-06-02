@@ -11,13 +11,13 @@ const useStyles = makeStyles({
     },
 });
 
-const BookingPayment = ({ goToConfirmed, goToInfo }) => {
+const BookingPayment = ({ goToConfirmed, goToInfo, hotelInfo, from, to}) => {
   const classes = useStyles();
 
   return (
     <div className={classes.bookingPayment}>
       <PaymentDetail goToConfirmed={goToConfirmed} goToInfo={goToInfo}/>
-      <DestInfo/>
+      <DestInfo hotelInfo={hotelInfo} from={from} to={to}/>
     </div>
   )
 }
